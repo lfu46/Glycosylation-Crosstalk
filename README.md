@@ -1,4 +1,4 @@
-# R Code for Data Analysis: Crosstalk Between O-GlcNAcylation and N-Glycosylation  
+# R Code for Data Analysis: Crosstalk Between Protein O-GlcNAcylation and N-Glycosylation  
 
 This repository contains the R code used for data analysis in the project:  
 
