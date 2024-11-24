@@ -372,8 +372,8 @@ OG_glycosite_disorder_tb <- bind_rows(
   OG_glycosite_disorder_Jurkat
 ) |> mutate(
   Disorder = case_when(
-    disorder < 0.5 ~ "Disordered",
-    disorder > 0.5 ~ "Ordered"
+    disorder > 0.5 ~ "Disordered",
+    disorder < 0.5 ~ "Ordered"
   )
 )
 
@@ -383,8 +383,8 @@ write_xlsx(OG_glycosite_disorder_tb, path = paste0(file_path, "OG_glycosite_diso
 OG_glycosite_disorder_wilcox_test <- OG_glycosite_disorder_tb |> 
   mutate(
     Disorder = case_when(
-      disorder < 0.5 ~ "Disordered",
-      disorder > 0.5 ~ "Ordered"
+      disorder > 0.5 ~ "Disordered",
+      disorder < 0.5 ~ "Ordered"
     )
   )|> 
   group_by(Cell) |> 
@@ -399,8 +399,8 @@ violin_point_OG_glycosite_disorder <- OG_glycosite_disorder_tb |>
   filter(!is.na(disorder)) |> 
   mutate(
     Disorder = case_when(
-      disorder < 0.5 ~ "Disordered",
-      disorder > 0.5 ~ "Ordered"
+      disorder > 0.5 ~ "Disordered",
+      disorder < 0.5 ~ "Ordered"
     )
   )|> 
   ggplot() +
